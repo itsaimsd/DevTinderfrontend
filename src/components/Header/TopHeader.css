@@ -1,0 +1,32 @@
+.marquee {
+  display: flex;
+  white-space: nowrap; /* Prevent text wrapping */
+  animation: marquee 55s linear infinite; /* Smooth scrolling effect */
+}
+
+.marquee span {
+  padding: 0 2rem; /* Add spacing between text items */
+  font-size: 0.7rem; /* Adjust font size for readability */
+  font-weight: 600; /* Make text slightly bolder */
+  font-family: "Poppins", sans-serif; /* Updated font family */
+  color: #f5f5f5; /* Use a lighter white for better clarity */
+  text-rendering: optimizeLegibility; /* Improve font rendering */
+  -webkit-font-smoothing: antialiased; /* Smooth out the edges on webkit browsers */
+  letter-spacing: 0.05em; /* Add slight spacing for better readability */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start outside the viewport */
+  }
+  100% {
+    transform: translateX(-100%); /* Move all the way to the left */
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee span {
+    font-size: 0.875rem; /* Slightly smaller font for smaller screens */
+    padding: 0 1rem; /* Reduce spacing for smaller screens */
+  }
+}
