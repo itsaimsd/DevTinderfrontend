@@ -2,9 +2,14 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      colors: {
-        gradient:
-          "linear-gradient(90deg, rgba(59,130,246,1) 0%, rgba(99,102,241,1) 100%)",
+      animation: {
+        fadeIn: "fadeIn 0.2s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: 0, transform: "translateY(-5px)" },
+          to: { opacity: 1, transform: "translateY(0)" },
+        },
       },
     },
   },

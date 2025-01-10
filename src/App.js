@@ -1,14 +1,16 @@
 import React from "react"; // To define a scrollable section
 import TopHeader from "./components/Header/TopHeader";
-import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import HomePage from "./components/pages/HomePage";
+import Footer from "./components/Footer/Footer"; 
 
 function App() {
   return (
     <div>
       <TopHeader />
-      <Header />
-      {/* <Footer /> */}
+      <Header /> 
+      <HomePage /> 
+      <Footer />
     </div>
   );
 }

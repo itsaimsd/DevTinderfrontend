@@ -1,18 +1,10 @@
 import React from "react";
-import HeroSection from "../components/HeroSection";
-import MapSection from "../components/MapSection";
-import PlanSelector from "../components/PlanSelector";
-import BagSelector from "../components/BagSelector";
-import CTASection from "../components/CTASection";
+import HeroSection from "../HeroSection/HeroSection"; // Ensure correct path
 
 const HomePage = () => {
   return (
-    <div className="home-page">
+    <div>
       <HeroSection />
-      <MapSection />
-      <PlanSelector />
-      <BagSelector />
-      <CTASection />
     </div>
   );
 };
