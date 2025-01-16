@@ -6,27 +6,24 @@ import BagSelector from "./BagSelector";
 import CallToAction from "./CallToAction";
 
 const HeroSection = () => {
-  const [address, setAddress] = useState(""); // Store the address from LocationInput
-  const [selectedDate, setSelectedDate] = useState(""); // Store the selected date
-  const [selectedPlan, setSelectedPlan] = useState(""); // Store the selected plan
-  const [selectedBags, setSelectedBags] = useState(""); // Store the number of bags
+  const [address, setAddress] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [selectedBags, setSelectedBags] = useState("");
 
   return (
-    <div className="bg-gradient-to-r from-blue-100 to-blue-300 h-screen flex flex-col items-center justify-center text-center px-4">
-      <h1 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
+    <div className="bg-gradient-to-r from-indigo-200 via-blue-300 to-blue-500 h-screen flex flex-col items-center justify-center text-center px-6">
+      <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-600 mb-16 tracking-wide animate-typing overflow-hidden whitespace-nowrap border-r-4 border-teal-500 ">
         Luggage Storage Near LPU
       </h1>
 
       <div className="bg-white rounded-3xl shadow-lg flex items-center w-full max-w-4xl px-4 py-3 space-x-3">
-        {/* Location Input */}
-        <div className="flex items-center flex-1 px-9 ">
+        <div className="flex items-center flex-1 px-2 ">
           <LocationInput setAddress={setAddress} />
         </div>
 
-        {/* Divider */}
         <div className="border-l h-6"></div>
 
-        {/* Date Picker */}
         <div className="flex items-center flex-1">
           <DateSelector setSelectedDate={setSelectedDate} />
         </div>
