@@ -7,8 +7,8 @@ import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root")); // Create a root element
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* <BrowserRouter> */}
       <App />
-    </BrowserRouter>
+    {/* </BrowserRouter> */}
   </React.StrictMode>
 );
