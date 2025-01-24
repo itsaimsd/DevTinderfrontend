@@ -33,7 +33,7 @@ const UserCard = ({ user }) => {
       <figure className="h-56 overflow-hidden">
         <img
           src={photoUrl}
-          alt={`${firstName}'s Photo`}
+          alt={`${photoUrl}'s Photo`}
           className="object-cover w-full h-full"
         />
       </figure>
