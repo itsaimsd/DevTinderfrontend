@@ -1,32 +1,23 @@
-// import React from "react";
-
-// const UserCard = ({ user }) => {
-//   const { firstName, lastName, photoUrl, age, gender, about } = user;
-
-//   return (
-//     <div className="card bg-base-300 w-96 shadow-xl">
-//       <figure>
-//         <img src={user.photoUrl} alt="Photo" />
-//       </figure>
-//       <div className="card-body">
-//         <h2 className="card-title">{firstName + " " + lastName}</h2>
-//         {age && gender && <p>{age + ", " + gender}</p>}
-//         <p>{about}</p>
-//         <div className="card-actions justify-around my-4">
-//           <button className="btn btn-primary">Ignore</button>
-//           <button className="btn btn-secondary">Interested</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default UserCard;
-
+import axios from "axios";
 import React from "react";
+import { BASE_URL } from "../utils/contants";
+import { useDispatch } from "react-redux";
+import { removeUserFromFeed } from "../utils/feedSlice";
 
 const UserCard = ({ user }) => {
-  const { firstName, lastName, photoUrl, age, gender, about } = user;
+  const { _id, firstName, lastName, photoUrl, age, gender, about } = user;
+  const dispatch = useDispatch();
+
+  const handleSendRequest = async (status, userId) => {
+    try {
+      const res = await axios.post(
+        BASE_URL + "/request/send/" + status + "/" + userId,
+        {},
+        { withCredentials: true }
+      );
+      dispatch(removeUserFromFeed(userId));
+    } catch (err) {}
+  };
 
   return (
     <div className="card w-96 bg-base-200 shadow-xl">
@@ -52,8 +43,18 @@ const UserCard = ({ user }) => {
           {about || "No additional information available."}
         </p>
         <div className="card-actions justify-center mt-4">
-          <button className="btn btn-primary w-28">Ignore</button>
-          <button className="btn btn-secondary w-28">Interested</button>
+          <button
+            className="btn btn-primary w-28"
+            onClick={() => handleSendRequest("ignored", _id)}
+          >
+            Ignore
+          </button>
+          <button
+            className="btn btn-secondary w-28"
+            onClick={() => handleSendRequest("interested", _id)}
+          >
+            Interested
+          </button>
         </div>
       </div>
     </div>
