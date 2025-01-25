@@ -26,9 +26,13 @@
 - Get the feed and the feed in the store
 - build the user card on feed
 - Show toast message on save profile
-- see all my connections
-- 
+- New Page -see all my connections
+- Feature - Accept/Reject Connection Request 
 
+Remaining:
+- send/ignore the user card from Feed
+- Signup New User
+- E2ETesting
 
 
 - Body
