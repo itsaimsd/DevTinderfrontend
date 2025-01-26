@@ -27,13 +27,14 @@
 - build the user card on feed
 - Show toast message on save profile
 - New Page -see all my connections
-- Feature - Accept/Reject Connection Request 
+- Feature - Accept/Reject Connection Request
+- send/ignore the user card from Feed
 
 Remaining:
+
 - send/ignore the user card from Feed
 - Signup New User
 - E2ETesting
-
 
 - Body
   NavBar
